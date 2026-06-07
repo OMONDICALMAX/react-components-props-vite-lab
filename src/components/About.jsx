@@ -1,10 +1,17 @@
-export default function About({ blog = {} }) {
-  const image = blog.image || "https://via.placeholder.com/150";
+import React from "react";
+
+function About({ about, image, blog }) {
+  const defaultImage = "https://via.placeholder.com/215";
 
   return (
     <aside>
-      <img src={image} alt="blog logo" />
-      <p>{blog.about || "No about text provided"}</p>
+      <img
+        src={image || defaultImage}
+        alt="blog logo"
+      />
+      <p>{about || blog?.about}</p>
     </aside>
   );
 }
+
+export default About;

@@ -1,12 +1,15 @@
 import React from "react";
 
-export default function Article({ post }) {
+function Article({ title, date, preview }) {
+  const defaultDate = new Date(0).toDateString();
+
   return (
     <article>
-      <h3>{post.title}</h3>
-      <p>{post.date}</p>
-      <p>{post.preview}</p>
-      <p>{post.minutes} min read</p>
+      <h3>{title}</h3>
+      <small>{date || defaultDate}</small>
+      <p>{preview}</p>
     </article>
   );
 }
+
+export default Article;
